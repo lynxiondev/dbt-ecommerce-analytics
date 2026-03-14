@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: thelook_ecommerce
+    database: mi-primer-laboratorio-data  
+    schema: ecommerce_raw
+    tables:
+      - name: raw_users
+        identifier: users
+      - name: raw_products
+        identifier: products
+      - name: raw_orders
+        identifier: orders
+      - name: raw_items
+        identifier: order_items
+      - name: raw_events
+        identifier: events    
