@@ -1,5 +1,5 @@
-WITH source AS (
-    SELECT * FROM {{ source('thelook_ecommerce', 'raw_users') }}
+with source as (
+    select * from {{ source('thelook_ecommerce', 'raw_users') }}
 ),
 
 renamed AS (
@@ -18,4 +18,5 @@ renamed AS (
     FROM source
 )
 
-SELECT * FROM renamed   
+SELECT * FROM renamed; 
+ 
