@@ -12,11 +12,9 @@ renamed AS (
         gender,
         state,
         country,
-        -- Usamos la macro que creamos el otro día si la pasamos a este proyecto!
-        -- Si no, por ahora lo dejamos así:
         created_at AS account_created_at
     FROM source
 )
 
-SELECT * FROM renamed; 
+SELECT * FROM renamed   
  

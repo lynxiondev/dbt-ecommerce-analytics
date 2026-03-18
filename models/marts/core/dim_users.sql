@@ -2,8 +2,7 @@ with users as (
     select * from {{ ref('int_users_orders_aggregated') }}
 ),
 
--- Aquí podríamos traer más datos si quisiéramos, 
--- pero por ahora vamos a limpiar y organizar el Mart final.
+
 
 final as (
     select
@@ -19,7 +18,7 @@ final as (
         total_orders,
         first_order_created_at,
         last_order_created_at,
-        -- Un toque de SQL avanzado: Categorizar al cliente
+        
         case 
             when total_orders >= 10 then 'VIP'
             when total_orders >= 5 then 'Recurrente'
@@ -29,5 +28,5 @@ final as (
     from users
 )
 
-select * from final;
+select * from final 
 

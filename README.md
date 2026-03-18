@@ -1,15 +1,17 @@
-Welcome to your new dbt project!
+# E-commerce Data Platform (dbt + BigQuery)
 
-### Using the starter project
+Proyecto de Analytics Engineering basado en el dataset `thelook_ecommerce`. 
 
-Try running the following commands:
-- dbt run
-- dbt test
+### Arquitectura de Datos
+- **Staging**: Limpieza y normalización de fuentes crudas (incluye modelos **incrementales** para eventos).
+- **Intermediate**: Transformaciones complejas y joins de entidades.
+- **Marts**: Tablas de hechos (`fct_`) y dimensiones (`dim_`) listas para BI.
 
+### Tech Stack
+- **dbt-core** (v1.x)
+- **BigQuery** como Data Warehouse.
+- **dbt-utils** para generación de surrogate keys.
+- **Macros personalizadas** para estandarización de moneda.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Calidad de Datos
+Implementación de tests de integridad referencial, unicidad y rangos de valores en todas las capas.   

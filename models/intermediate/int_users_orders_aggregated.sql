@@ -27,5 +27,5 @@ select
     end as is_buyer
 from users u
 left join user_orders uo 
-    on u.user_id = uo.user_id;
+    on u.user_id = uo.user_id 
 

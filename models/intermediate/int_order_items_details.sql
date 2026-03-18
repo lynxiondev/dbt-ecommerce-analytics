@@ -25,5 +25,5 @@ select
     oi.item_created_at
 from order_items oi
 left join products p 
-    on oi.product_id = p.product_id; 
+    on oi.product_id = p.product_id  
 

@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: int_session_track
+    columns:
+      - name: unique_session_key
+        tests:
+          - unique
+          - not_null    

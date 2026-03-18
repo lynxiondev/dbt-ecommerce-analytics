@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Shipped', 'Complete', 'Returned', 'Cancelled', 'Processing']
+
+  - name: stg_ecommerce__users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null  
