@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: external_sources
+    database: mi-primer-laboratorio-data 
+    schema: raw_external_data
+    tables:
+      - name: daily_weather  
