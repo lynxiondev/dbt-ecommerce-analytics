@@ -11,6 +11,10 @@ final as (
         o.*,
         w.max_temperature,
         w.weather_condition
+        case 
+           when w.weather_condition in        ('Rain', 'Storm') then 'rainy_day'
+           else 'clear_day'
+        end as weather_category
     from orders o
     left join weather w 
         on cast(o.order_created_at as date) = w.date_day
