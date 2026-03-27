@@ -1,5 +1,5 @@
 with orders as (
-    select * from {{ ref('fct_order_items') }} -- Tu modelo pro de ayer
+    select * from {{ ref('fct_order_items') }} 
 ),
 
 weather as (
