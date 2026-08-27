@@ -8,12 +8,12 @@ final as (
         product_name,
         category,
         brand,
-        {{ cents_to_dollars('cost') }} as cost,
-        {{ cents_to_dollars('retail_price') }} as retail_price,
+        (cost / 100.0) as cost,
+        (retail_price / 100.0) as retail_price,
         department,
-        round(retail_price - cost, 2) as markup,
-        round((retail_price - cost) / nullif(retail_price, 0) * 100, 2) as margin_percent
+        round((retail_price / 100.0) - (cost / 100.0), 2) as markup,
+        round(((retail_price / 100.0) - (cost / 100.0)) / nullif((retail_price / 100.0), 0) * 100, 2) as margin_percent
     from products
 )
 
-select * from final  
+select * from final
